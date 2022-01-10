@@ -1,0 +1,158 @@
+body{
+    /* background-color: blueviolet;     Test */
+    background-color: blueviolet;
+    height: 50000px;
+}
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+/* ----------------------------------------------------------- */
+/*  */
+.wrapper{
+    /* max-width: 1100px; */
+}
+
+.wrapper .gellery{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gellery .image{
+    padding: 7px;
+    width: calc(100%/ 3);
+    width: 20%;
+    cursor: pointer;
+}
+
+
+.gellery span{
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+
+
+}
+
+
+.gellery .image img{
+    width: 100%;
+    vertical-align: middle;
+    transition: all 1.3s ease-in-out;
+}
+
+
+.gellery .image:hover img{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+/* ------------------------------------------------ */
+/* img-zoom */
+.preview-box{
+    position: fixed;
+    max-width: 700px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)  scale(0.9);
+    background-color: #fff;
+    padding: 0 5px 5px 5px ;
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3 ease-in-out;
+
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.preview-box.show{
+    pointer-events: auto;
+    opacity: 1;
+    transform: translate(-50% -50%) scale(1);
+    transition: all 0.3 ease-in-out;
+}
+
+.preview-box .details{
+    display: flex;
+    align-items: center;
+    padding: 12px 15px 12px 10px ;
+    justify-content: space-between;
+}
+
+.preview-box .details .closeTimes{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.details .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.details .title p{
+    margin: 0 5px;
+}
+.details .title p.current-img{
+    font-weight: 500;
+}
+
+
+.preview-box .img-box{
+    display: flex;
+    width: 100%;
+}
+
+
+.img-box .slide{
+    position: absolute;
+    top: 50%;
+    /* transform: translate(-50%); */
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    width: 60px;
+    /* height: 50px; */
+    /* line-height: 50px; */
+    text-align: center;
+}
+
+.img-box .slide.prev{
+    left: 0;
+}
+.img-box .slide.next{
+    right: 0;
+}
+
+
+
+
+
+.preview-box .img-box img{
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+}
+
+.shadow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
